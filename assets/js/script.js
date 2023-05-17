@@ -45,12 +45,14 @@ const dataAtual = new Date();
 let saudacao = "";
 let hora = dataAtual.getHours();
 
-if (hora >= 5 && hora < 12) {
-  saudacao = "BOM DIA";
-} else if (hora >= 12 && hora < 18) {
-  saudacao = "BOA TARDE";
-} else {
-  saudacao = "BOA NOITE";
+switch (true) {
+  case hora >= 5 && hora < 12:
+    saudacao = "Bom Dia";
+    break;
+  case hora >= 12 && hora < 18:
+    saudacao = "Boa Tarde";
+    break;
+  default:
+    saudacao = "Boa Noite";
 }
-
 saudacaoElement.innerHTML = saudacao;
