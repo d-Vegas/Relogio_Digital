@@ -2,6 +2,11 @@ const horas = document.getElementById('horas');
 const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
 
+
+const dia = document.getElementById('dia');
+const mes = document.getElementById('mes');
+const ano = document.getElementById('ano');
+
 const relogio = setInterval(function time() {
     let dateToday = new Date();
     let hr = dateToday.getHours();
@@ -17,5 +22,35 @@ const relogio = setInterval(function time() {
     horas.textContent = hr;
     minutos.textContent = min;
     segundos.textContent = s;
-
 })
+
+const periodo = setInterval(function(){
+    let datePeriod = new Date();
+    let day = datePeriod.getDate();
+    let month = datePeriod.getMonth() + 1;
+    let year = datePeriod.getFullYear();
+
+    if (day < 10) day = '0' + day;
+    if (month < 10) month = '0' + month;
+  
+    dia.textContent = day;
+    mes.textContent = month;
+    ano.textContent = year;
+
+});
+
+const saudacaoElement = document.getElementById("saudacao");
+
+const dataAtual = new Date();
+let saudacao = "";
+let hora = dataAtual.getHours();
+
+if (hora >= 5 && hora < 12) {
+  saudacao = "Bom dia";
+} else if (hora >= 12 && hora < 18) {
+  saudacao = "Boa tarde";
+} else {
+  saudacao = "Boa noite";
+}
+
+saudacaoElement.innerHTML = saudacao;
