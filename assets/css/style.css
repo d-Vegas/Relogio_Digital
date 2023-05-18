@@ -13,10 +13,9 @@ html, body {
 }
 
 header {
-  font-family: 'Poppins', sans-serif;
   background-color: #00000000;
   box-shadow: 1px 3px 7px black;
-  margin: 0 7rem;
+  margin: 0 20rem;
 }
 
 .nav-bar {
@@ -34,6 +33,20 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+ 
+}
+
+li{
+  background: rgba(5, 5, 5, .9);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+  border-radius: 7px;
+  letter-spacing: 3px;
+  width: 180px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-list ul{
@@ -43,12 +56,19 @@ header {
 }
 
 .nav-item{
+  font-size: 20px;
   margin: 0 15px;
+  transition: transform .2s; 
+}
+
+.nav-item:hover{
+  transform: scale(1.2); 
 }
 
 .nav-link{
+  font-family: 'Roboto';
   text-decoration: none;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #fff;
   font-weight: 400;
 }
